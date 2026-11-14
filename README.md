@@ -3,7 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Shell Script](https://img.shields.io/badge/Shell-Bash-green.svg)](https://www.gnu.org/software/bash/)
 [![Monitoring](https://img.shields.io/badge/Monitoring-Icinga%2FNagios-blue.svg)](https://icinga.com/)
-[![Version](https://img.shields.io/badge/version-1.5.39-orange.svg)](check_fortianalyzer_health.sh)
+[![Version](https://img.shields.io/badge/version-1.5.2-orange.svg)](check_fortianalyzer_health.sh)
 
 A comprehensive Bash-based monitoring plugin for Fortinet FortiAnalyzer, compatible with Icinga and Nagios monitoring systems. This plugin monitors system health, registered devices, ADOM log quotas, background tasks, license and certificate expiry, NTP, DNS, syslog/log-forwarding configuration, log reception rates, real-time log search (Logwatch), and SOC incidents — via the FortiAnalyzer JSON-RPC API and/or SNMP.
 
