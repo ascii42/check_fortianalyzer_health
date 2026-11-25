@@ -40,11 +40,12 @@
 #                    filter active alerts client-side; handle JSON-RPC v2 error shape (.error.code).
 #                    Fix -eNTP: handle ntptype fortiguard vs custom; handle string/int status.
 # 1.5.2 2026-11-14  -eLogwatch: add device name to log line ([devname] before datetime).
+# 1.5.3 2026-11-25  Change some exit codes 
 
 ## VARIABLES
 PROGNAME="${0##*/}"
 PROGPATH="${0%/*}"
-REVISION="1.5.2"
+REVISION="1.5.3"
 JQ="$(which jq 2>/dev/null)"
 CURL="$(which curl 2>/dev/null)"
 AWK="$(which awk 2>/dev/null)"
@@ -639,11 +640,11 @@ if [[ -n "${SNMPGET}" && ( -n "${snmp_user}" || -n "${snmp_community}" ) ]]; the
         # USM enforces minimum 8-char passphrases; fail early with a clear message
         if [[ -n "${snmp_auth_pass}" && ${#snmp_auth_pass} -lt 8 ]]; then
             echo "[UNKNOWN] - SNMPv3 auth passphrase too short (${#snmp_auth_pass} chars) - USM requires minimum 8 characters"
-            exit 4
+            exit 3
         fi
         if [[ -n "${snmp_priv_pass}" && ${#snmp_priv_pass} -lt 8 ]]; then
             echo "[UNKNOWN] - SNMPv3 priv passphrase too short (${#snmp_priv_pass} chars) - USM requires minimum 8 characters"
-            exit 4
+            exit 3
         fi
         _snmp_sec="${snmp_sec_level}"
         if [[ -z "${_snmp_sec}" ]]; then
